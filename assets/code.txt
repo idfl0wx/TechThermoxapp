@@ -1,0 +1,67 @@
+#include <Wire.h>
+#include "rgb_lcd.h"
+#include <math.h>  
+const int B=4275;             
+const int R0 = 100000;            
+const int pinTempSensor = A0;    
+float nombre = 0;
+float nombrepair = 0;
+int nombrepairentier = 0;
+
+rgb_lcd lcd;
+void setup()
+{
+    Serial.begin(9600);
+    lcd.begin(16, 2);
+    delay(200);
+}
+
+void loop()
+{
+    int a = analogRead(pinTempSensor );
+    float R = 1023.0/((float)a)-1.0;
+    R = 100000.0*R;
+    float temperature=1.0/(log(R/100000.0)/B+1/298.15)-273.15;
+ 
+    lcd.setCursor(0, 0);
+
+    nombrepair = nombre/2;
+    nombrepairentier = nombre/2;
+    Serial.print (nombre); 
+    Serial.print ("  "); 
+    Serial.print (nombrepair); 
+    Serial.print ("  "); 
+    Serial.print (nombrepairentier); 
+    Serial.print ("  "); 
+    
+     if ( nombrepairentier != nombrepair && -10 < temperature && temperature < 18)
+    {
+      lcd.setRGB(0, 46, 255);
+    }
+    if (nombrepairentier != nombrepair && 18 < temperature && temperature < 28)
+    {
+      lcd.setRGB(77, 255, 0);
+    }
+    if ( nombrepairentier != nombrepair && 28 < temperature && temperature < 38)
+    {
+      lcd.setRGB(255, 62, 0);
+    }
+     if (nombrepairentier != nombrepair && 38 < temperature && temperature < 100)
+    {
+      lcd.setRGB(96, 27, 161);
+    }
+    if (nombrepairentier == nombrepair) 
+    {
+     lcd.setRGB(0, 0, 0);
+    }
+    delay(10);
+    lcd.setCursor(0, 0);
+    lcd.print("Temperature:     ");
+   
+    lcd.setCursor(0,1 );
+    lcd.print(temperature);
+    lcd.write('\xDF');
+    lcd.print("C");
+    delay(100);
+}
+    
