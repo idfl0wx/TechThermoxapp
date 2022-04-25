@@ -2,15 +2,12 @@
 
 A new Flutter project.
 
-## Getting Started
+Bonjour 👋 je m'appelle thefl0w\_
+==========================
 
-This project is a starting point for a Flutter application.
+Je suis un élevé en Terminal BAC Technologie STI2D. J'ai créé cette application pour mon projet "TechThermox" pour faire une de publicité notre prototype a mec camardes de ma classe. Cette application a été créée à l'aide d'un [tutoriel de YouTube](https://www.youtube.com/watch?v=x4DydJKVvQk&list=PLnSavHZ5aCEm_fqaJasNCEc8_or3pJOx-&index=3).
 
-A few resources to get you started if this is your first Flutter project:
+* ✉️ Vous pouvez me contacter à [idfl0wxzero@gmail.com](mailto:idfl0wxzero@gmail.com)
+* 🧠  J'apprends Flutter et Java
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
